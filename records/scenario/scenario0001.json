@@ -1,0 +1,30 @@
+[
+    {
+        "@type": "Scenario",
+        "steps": {
+            "Steps": [
+                {
+                    "name": "Read artefacts and ingest from CSV",
+                    "type": "executePlaybook",
+                    "playbookIRI": "\/api\/3\/workflows\/8945fed0-4d15-4847-bc4c-a807ac80e461",
+                    "preCreateMessage": "Triggering playbook to create demo alert for csv data management",
+                    "postCreateMessage": "",
+                    "waitTimeforNextStep": "0"
+                }
+            ]
+        },
+        "configuration": null,
+        "title": "Ingest and create artefacts by extracting details from  CSV files",
+        "description": "This scenario demonstrates how can we ingest rows as records from a CSV File.  \n\nLets consider below use case follow\n\n* A tool which allows to export artefacts  in a CSV File \n* We have to read CSV file and convert into a dataset which can be ingested in ForiSOAR\n* Here we use 'Extract Data from Single CSV' operation of CSV Data Management connector to read file and extract data\n* Data is then ingested using 'Ingest Bulk Feed' playbook step\n\nUsage\n\n* Deploy current scenario \n* A playbook will execute which will download CSV feed from following URLs\n    * https:\/\/malsilo.gitlab.io\/feeds\/dumps\/url_list.txt\n    * https:\/\/malsilo.gitlab.io\/feeds\/dumps\/ip_list.txt\n* Above feeds are saved as attachment in CSV format\n* We will use CSV Data Management connector to join both files and create data set\n* This data set will be ingested in ForiSOAR using 'Ingest Bulk Feed'\n\n**Note :** This simulation will create IOC records , tagged 'csv-demo'\n\n",
+        "createdAlertsID": null,
+        "uuid": "957c18fb-b929-42ab-862e-11d9b30fbebe",
+        "createUser": "\/api\/3\/people\/3451141c-bac6-467c-8d72-85e0fab569ce",
+        "createDate": 1651490490.472902,
+        "modifyUser": "\/api\/3\/appliances\/57545210-2adc-472b-a24f-2df6ee8dfe63",
+        "modifyDate": 1652345619.295303,
+        "id": 1,
+        "recordTags": [
+            "CSV Data Management"
+        ]
+    }
+]

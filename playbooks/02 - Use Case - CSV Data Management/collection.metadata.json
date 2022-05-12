@@ -1,0 +1,11 @@
+{
+    "@context": "\/api\/3\/contexts\/WorkflowCollection",
+    "@type": "WorkflowCollection",
+    "name": "02 - Use Case - CSV Data Management",
+    "description": "Use case demo playbook",
+    "visible": true,
+    "image": null,
+    "uuid": "5c265a46-01de-4ba8-9b5a-b8bae4335b35",
+    "deletedAt": null,
+    "recordTags": []
+}
