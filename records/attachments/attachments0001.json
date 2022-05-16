@@ -1,0 +1,32 @@
+[
+    {
+        "@type": "Attachment",
+        "name": "Assets Details",
+        "description": "CSV Data Management",
+        "file": "\/api\/3\/files\/b6ce0578-dcd4-41da-884d-8317c3b31b61",
+        "type": null,
+        "uuid": "1cc2df1c-d731-458e-85cd-7af6a7e12ecf",
+        "createUser": "\/api\/3\/people\/3451141c-bac6-467c-8d72-85e0fab569ce",
+        "createDate": 1651225402.168742,
+        "modifyUser": "\/api\/3\/people\/3451141c-bac6-467c-8d72-85e0fab569ce",
+        "modifyDate": 1651565171.351638,
+        "id": 16,
+        "recordTags": [],
+        "assignee": ""
+    },
+    {
+        "@type": "Attachment",
+        "name": "Vulnerability Scans Report",
+        "description": "CSV Data Management",
+        "file": "\/api\/3\/files\/28ce9a37-b23f-4d47-8257-e98f0d3c7564",
+        "type": null,
+        "uuid": "b7ba8c3b-9b7e-4991-89bb-b62209ccf539",
+        "createUser": "\/api\/3\/people\/3451141c-bac6-467c-8d72-85e0fab569ce",
+        "createDate": 1651225339.729186,
+        "modifyUser": "\/api\/3\/people\/3451141c-bac6-467c-8d72-85e0fab569ce",
+        "modifyDate": 1651565182.183082,
+        "id": 15,
+        "recordTags": [],
+        "assignee": ""
+    }
+]

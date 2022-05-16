@@ -4,6 +4,34 @@
         "steps": {
             "Steps": [
                 {
+                    "name": "Read Reports and update assets",
+                    "type": "executePlaybook",
+                    "playbookIRI": "\/api\/3\/workflows\/ab7b60c7-b8fe-4442-83cb-145bdd9169bb",
+                    "preCreateMessage": "Triggering playbook to create demo alert for csv data management",
+                    "postCreateMessage": "",
+                    "waitTimeforNextStep": "0"
+                }
+            ]
+        },
+        "configuration": null,
+        "title": "Read and merge two CSV file to create a data set",
+        "description": "This scenario demonstrates how can we create a single dataset by merging two CSV files pivoting over a common column.\n\nLets consider below use case follow\n\n* A tool which allows to vulnerability  scan report in a CSV file  which has IP address as column name\n* An assets  inventory tool which allows to export assets details in CSV file which has also IP address as column name\n* We have to create single dataset by merging two CSV files pivoting over a common column which can be ingested in ForiSOAR  \n* Here we use 'Merge and Extract Data from two CSV' operation of CSV Data Management connector to read file and extract data  \n* Data is then ingested using playbook \n\nUsage\n\n* Deploy current scenario  \n* A playbook will using CSV Data Management connector  read both CSV files and merge using common column.\n\t* The resultant dataset will be used to create assets records which will have asset name along with vulnerability details \n\n**Note :** This simulation will  a demo alert which will correlate assets record. ",
+        "createdAlertsID": null,
+        "uuid": "105f1e09-5393-4da8-8a32-fb9ea8d2a4e0",
+        "createUser": "\/api\/3\/people\/3451141c-bac6-467c-8d72-85e0fab569ce",
+        "createDate": 1652346876.761123,
+        "modifyUser": "\/api\/3\/appliances\/57545210-2adc-472b-a24f-2df6ee8dfe63",
+        "modifyDate": 1652677288.655039,
+        "id": 5,
+        "recordTags": [
+            "CSV Data Management"
+        ]
+    },
+    {
+        "@type": "Scenario",
+        "steps": {
+            "Steps": [
+                {
                     "name": "Read artefacts and ingest from CSV",
                     "type": "executePlaybook",
                     "playbookIRI": "\/api\/3\/workflows\/8945fed0-4d15-4847-bc4c-a807ac80e461",

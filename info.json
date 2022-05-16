@@ -33,19 +33,41 @@
     "supportInfo": "Fortinet Customer Support",
     "iconLarge": null,
     "fsrMinCompatibility": "7.2.0",
-    "date": "2022-05-12T08:59:57+00:00",
+    "date": "2022-05-16T06:05:25+00:00",
     "contents": {
+        "modules": {
+            "attachments": {
+                "name": "Attachments",
+                "apiName": "attachments"
+            },
+            "scenario": {
+                "name": "Scenario",
+                "apiName": "scenario"
+            }
+        },
         "playbooks": [
             {
                 "name": "02 - Use Case - CSV Data Management"
             }
         ],
         "globalVariables": [],
+        "connectors": [
+            {
+                "name": "CSV Data Management",
+                "apiName": "csv-data-management",
+                "version": "1.0.0"
+            }
+        ],
         "recordSets": [
+            {
+                "name": "Attachments",
+                "apiName": "attachments",
+                "count": 2
+            },
             {
                 "name": "Scenario",
                 "apiName": "scenario",
-                "count": 1
+                "count": 2
             }
         ]
     }
