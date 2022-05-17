@@ -33,7 +33,7 @@
     "supportInfo": "Fortinet Customer Support",
     "iconLarge": null,
     "fsrMinCompatibility": "7.2.0",
-    "date": "2022-05-12T08:59:57+00:00",
+    "date": "2022-05-17T09:58:58+00:00",
     "contents": {
         "playbooks": [
             {
@@ -41,11 +41,23 @@
             }
         ],
         "globalVariables": [],
+        "connectors": [
+            {
+                "name": "CSV Data Management",
+                "apiName": "csv-data-management",
+                "version": "1.0.0"
+            }
+        ],
         "recordSets": [
+            {
+                "name": "Attachments",
+                "apiName": "attachments",
+                "count": 2
+            },
             {
                 "name": "Scenario",
                 "apiName": "scenario",
-                "count": 1
+                "count": 2
             }
         ]
     }

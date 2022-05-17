@@ -97,7 +97,7 @@
         {
             "@type": "WorkflowStep",
             "name": "Create Indicator",
-            "description": null,
+            "description": "Creating first ten records for demo",
             "arguments": {
                 "for_each": {
                     "item": "{{vars.steps.Join_IP_and_URL_CSV_File_and_Create_Dataset.data[:10]}}",

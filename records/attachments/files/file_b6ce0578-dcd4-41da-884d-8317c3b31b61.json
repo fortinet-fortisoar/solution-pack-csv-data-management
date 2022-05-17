@@ -1,0 +1,13 @@
+{
+    "@context": "\/api\/3\/contexts\/File",
+    "@type": "File",
+    "uuid": "b6ce0578-dcd4-41da-884d-8317c3b31b61",
+    "assignee": "",
+    "id": "b6ce0578-dcd4-41da-884d-8317c3b31b61",
+    "filename": "Assets-Details.csv",
+    "mimeType": "text\/csv",
+    "uploadDate": 1651225401.052685,
+    "size": 30958,
+    "thumbnail": null,
+    "metadata": []
+}
