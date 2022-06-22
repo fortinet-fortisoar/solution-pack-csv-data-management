@@ -13,5 +13,5 @@ It can help perform different operations on CSV files like read file, perform de
 
 # Next Steps
 
-| [Installation](https://github.com/fortinet-fortisoar/solution-pack-csv-data-management/blob/develop/docs/setup.md#installation) | [Configuration](https://github.com/fortinet-fortisoar/solution-pack-csv-data-management/blob/develop/docs/setup.md#configuration) | [Usage](https://github.com/fortinet-fortisoar/solution-pack-csv-data-management/blob/develop/docs/usage.md) | [Contents](https://github.com/fortinet-fortisoar/solution-pack-csv-data-management/blob/develop/docs/contents.md) |
+| [Installation](https://github.com/fortinet-fortisoar/solution-pack-csv-data-management/blob/release/1.0.0/docs/setup.md#installation) | [Configuration](https://github.com/fortinet-fortisoar/solution-pack-csv-data-management/blob/release/1.0.0/docs/setup.md#configuration) | [Usage](https://github.com/fortinet-fortisoar/solution-pack-csv-data-management/blob/release/1.0.0/docs/usage.md) | [Contents](https://github.com/fortinet-fortisoar/solution-pack-csv-data-management/blob/release/1.0.0/docs/contents.md) |
 |--------------------------------------------|----------------------------------------------|------------------------|------------------------------|
