@@ -5,16 +5,9 @@
         "category": null,
         "description": "CSV Data management can perform different operations on CSV files like read file, perform deduplication, merge two CSV files,join two CSV files,concat two CSV files and return well formatted dataset",
         "publisher": null,
-        "version": "1.0.0",
-        "operation_roles": {
-            "extract_data_from_csv": [],
-            "merge_two_csv_and_extract_data": [],
-            "concat_two_csv_and_extract_data": [],
-            "join_two_csv_and_extract_data": []
-        },
+        "operation_roles": [],
         "configurations": [],
         "dataImports": [],
-        "install_mode": "tgz",
-        "installer_path": "csv-data-management_1.0.0.tgz"
+        "install_mode": "rpm"
     }
 ]
