@@ -1,0 +1,13 @@
+{
+    "@context": "\/api\/3\/contexts\/File",
+    "@type": "File",
+    "uuid": "8737b68b-a68e-4df1-8383-1c404de79a97",
+    "assignee": "",
+    "id": "8737b68b-a68e-4df1-8383-1c404de79a97",
+    "filename": "all.csv",
+    "mimeType": "text\/csv",
+    "uploadDate": 1658385980.048242,
+    "size": 614146,
+    "thumbnail": null,
+    "metadata": []
+}

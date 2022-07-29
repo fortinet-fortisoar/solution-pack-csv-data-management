@@ -62,6 +62,7 @@
             "top": "30",
             "left": "125",
             "stepType": "\/api\/3\/workflow_step_types\/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+            "group": null,
             "uuid": "5964a6e0-6718-4913-9ee2-6afcd779dc04"
         },
         {
@@ -89,9 +90,10 @@
                 "step_variables": []
             },
             "status": null,
-            "top": "705",
+            "top": "840",
             "left": "125",
             "stepType": "\/api\/3\/workflow_step_types\/0bfed618-0316-11e7-93ae-92361f002671",
+            "group": null,
             "uuid": "230d1076-8ed1-420c-8eda-093d48d15c95"
         },
         {
@@ -100,7 +102,7 @@
             "description": "Creating first ten records for demo",
             "arguments": {
                 "for_each": {
-                    "item": "{{vars.steps.Join_IP_and_URL_CSV_File_and_Create_Dataset.data[:10]}}",
+                    "item": "{{vars.steps.Join_IP_and_URL_CSV_File_and_Create_Dataset.data.records[:vars.num_of_records_to_create]}}",
                     "__bulk": true,
                     "parallel": false,
                     "condition": "",
@@ -114,7 +116,8 @@
                         "\/api\/3\/tags\/csv-demo"
                     ],
                     "indicatorStatus": "\/api\/3\/picklists\/2f5cff61-fbff-4bb3-96be-302b78a9fb47",
-                    "typeofindicator": "{%if vars.item.url != \"N\/A\" %}{{\"IndicatorType\" | picklist(\"URL\", \"@id\")}}{%elif vars.item[ipv4:port] != \"N\/A\"  %}{{\"IndicatorType\" | picklist(\"IP Address\", \"@id\")}}{% else %}None{% endif %}"
+                    "typeofindicator": "{%if vars.item.url != \"N\/A\" %}{{\"IndicatorType\" | picklist(\"URL\", \"@id\")}}{%elif vars.item[ipv4:port] != \"N\/A\"  %}{{\"IndicatorType\" | picklist(\"IP Address\", \"@id\")}}{% else %}None{% endif %}",
+                    "enrichmentStatus": "\/api\/3\/picklists\/a6d9da29-27b1-4b8a-965d-8d91518540d5"
                 },
                 "_showJson": false,
                 "collection": "\/api\/ingest-feeds\/indicators",
@@ -122,9 +125,10 @@
                 "step_variables": []
             },
             "status": null,
-            "top": "840",
+            "top": "975",
             "left": "125",
             "stepType": "\/api\/3\/workflow_step_types\/7b221880-716b-4726-a2ca-5e568d330b3e",
+            "group": null,
             "uuid": "4005a43d-02f0-44ea-9f6b-e658816e17f3"
         },
         {
@@ -145,9 +149,10 @@
                 "step_variables": []
             },
             "status": null,
-            "top": "165",
+            "top": "300",
             "left": "125",
             "stepType": "\/api\/3\/workflow_step_types\/0109f35d-090b-4a2b-bd8a-94cbc3508562",
+            "group": null,
             "uuid": "d51b0582-3d79-445b-8a29-5b3c53db86cd"
         },
         {
@@ -168,9 +173,10 @@
                 "step_variables": []
             },
             "status": null,
-            "top": "435",
+            "top": "570",
             "left": "125",
             "stepType": "\/api\/3\/workflow_step_types\/0109f35d-090b-4a2b-bd8a-94cbc3508562",
+            "group": null,
             "uuid": "b6bbdbb0-9d9a-4f2c-bde8-faa2cf452e66"
         },
         {
@@ -193,9 +199,10 @@
                 "step_variables": []
             },
             "status": null,
-            "top": "300",
+            "top": "435",
             "left": "125",
             "stepType": "\/api\/3\/workflow_step_types\/0109f35d-090b-4a2b-bd8a-94cbc3508562",
+            "group": null,
             "uuid": "514ad828-7f09-43a2-b1e8-b0d24dfaca56"
         },
         {
@@ -218,9 +225,10 @@
                 "step_variables": []
             },
             "status": null,
-            "top": "570",
+            "top": "705",
             "left": "125",
             "stepType": "\/api\/3\/workflow_step_types\/0109f35d-090b-4a2b-bd8a-94cbc3508562",
+            "group": null,
             "uuid": "196590dc-b52f-4376-bf17-36154b52d046"
         },
         {
@@ -253,9 +261,10 @@
                 "step_variables": []
             },
             "status": null,
-            "top": "1080",
-            "left": "120",
+            "top": "1245",
+            "left": "125",
             "stepType": "\/api\/3\/workflow_step_types\/2597053c-e718-44b4-8394-4d40fe26d357",
+            "group": null,
             "uuid": "19bba47a-d584-45b9-a68d-177079901cf4"
         },
         {
@@ -294,22 +303,28 @@
                 "step_variables": []
             },
             "status": null,
-            "top": "960",
-            "left": "120",
+            "top": "1110",
+            "left": "125",
             "stepType": "\/api\/3\/workflow_step_types\/b593663d-7d13-40ce-a3a3-96dece928770",
+            "group": null,
             "uuid": "fd27ae1e-0d59-4516-9a31-19850b63a916"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Configuration",
+            "description": null,
+            "arguments": {
+                "num_of_records_to_create": "10"
+            },
+            "status": null,
+            "top": "165",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
+            "group": null,
+            "uuid": "01be3657-816e-4cc8-b093-06474769182c"
         }
     ],
     "routes": [
-        {
-            "@type": "WorkflowRoute",
-            "name": "Start -> Pull Malsilo",
-            "targetStep": "\/api\/3\/workflow_steps\/d51b0582-3d79-445b-8a29-5b3c53db86cd",
-            "sourceStep": "\/api\/3\/workflow_steps\/5964a6e0-6718-4913-9ee2-6afcd779dc04",
-            "label": null,
-            "isExecuted": false,
-            "uuid": "a2b461a6-bc38-4b6e-8f10-048f5477e04b"
-        },
         {
             "@type": "WorkflowRoute",
             "name": "Download Malsilo URL List -> Create URL CSV Attachment",
@@ -357,23 +372,42 @@
         },
         {
             "@type": "WorkflowRoute",
-            "name": "Create Indicator -> Find",
-            "targetStep": "\/api\/3\/workflow_steps\/fd27ae1e-0d59-4516-9a31-19850b63a916",
-            "sourceStep": "\/api\/3\/workflow_steps\/4005a43d-02f0-44ea-9f6b-e658816e17f3",
-            "label": null,
-            "isExecuted": false,
-            "uuid": "dfdb288e-c068-47fd-b0c5-09eb6468d524"
-        },
-        {
-            "@type": "WorkflowRoute",
             "name": "Find -> Create Demo Alert",
             "targetStep": "\/api\/3\/workflow_steps\/19bba47a-d584-45b9-a68d-177079901cf4",
             "sourceStep": "\/api\/3\/workflow_steps\/fd27ae1e-0d59-4516-9a31-19850b63a916",
             "label": null,
             "isExecuted": false,
             "uuid": "d3917130-e55e-41e1-924c-2cb826ba8f4a"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Start -> Configuration",
+            "targetStep": "\/api\/3\/workflow_steps\/01be3657-816e-4cc8-b093-06474769182c",
+            "sourceStep": "\/api\/3\/workflow_steps\/5964a6e0-6718-4913-9ee2-6afcd779dc04",
+            "label": null,
+            "isExecuted": false,
+            "uuid": "9aedda3c-9f49-4594-bd1d-81377bb2f09d"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Configuration -> Download Malsilo URL List",
+            "targetStep": "\/api\/3\/workflow_steps\/d51b0582-3d79-445b-8a29-5b3c53db86cd",
+            "sourceStep": "\/api\/3\/workflow_steps\/01be3657-816e-4cc8-b093-06474769182c",
+            "label": null,
+            "isExecuted": false,
+            "uuid": "9a7ae95f-9348-43aa-9ab4-dc98ff106b4d"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Create Indicator -> Find IOCs",
+            "targetStep": "\/api\/3\/workflow_steps\/fd27ae1e-0d59-4516-9a31-19850b63a916",
+            "sourceStep": "\/api\/3\/workflow_steps\/4005a43d-02f0-44ea-9f6b-e658816e17f3",
+            "label": null,
+            "isExecuted": false,
+            "uuid": "c5b159e0-6dfb-4f5d-9dbb-753314f575e4"
         }
     ],
+    "groups": [],
     "priority": "\/api\/3\/picklists\/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
     "uuid": "8945fed0-4d15-4847-bc4c-a807ac80e461",
     "owners": [],

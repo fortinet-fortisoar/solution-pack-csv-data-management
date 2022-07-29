@@ -41,9 +41,10 @@
                 "step_variables": []
             },
             "status": null,
-            "top": "160",
-            "left": "200",
+            "top": "300",
+            "left": "125",
             "stepType": "\/api\/3\/workflow_step_types\/0bfed618-0316-11e7-93ae-92361f002671",
+            "group": null,
             "uuid": "8e737b0a-4652-4ceb-9b59-1a4c9a885eea"
         },
         {
@@ -52,7 +53,7 @@
             "description": "Creating first tens records for demo",
             "arguments": {
                 "for_each": {
-                    "item": "{{vars.steps.Read_Report_and_Create_DataSet.data[:10]}}",
+                    "item": "{{vars.steps.Read_Report_and_Create_DataSet.data.records[:vars.num_of_records_to_create]}}",
                     "__bulk": true,
                     "parallel": false,
                     "condition": "",
@@ -74,9 +75,10 @@
                 "step_variables": []
             },
             "status": null,
-            "top": "296",
-            "left": "374",
+            "top": "435",
+            "left": "125",
             "stepType": "\/api\/3\/workflow_step_types\/2597053c-e718-44b4-8394-4d40fe26d357",
+            "group": null,
             "uuid": "3e574762-4214-4b3e-890d-5a8e6f239f07"
         },
         {
@@ -108,9 +110,10 @@
                 "step_variables": []
             },
             "status": null,
-            "top": "416",
-            "left": "511",
+            "top": "570",
+            "left": "125",
             "stepType": "\/api\/3\/workflow_step_types\/2597053c-e718-44b4-8394-4d40fe26d357",
+            "group": null,
             "uuid": "74fef32f-0678-4d32-a7d4-700ebedb99e3"
         },
         {
@@ -125,10 +128,25 @@
                 }
             },
             "status": null,
-            "top": "40",
-            "left": "40",
+            "top": "30",
+            "left": "125",
             "stepType": "\/api\/3\/workflow_step_types\/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+            "group": null,
             "uuid": "b0e94112-bc17-424d-a15e-7c0f17153bc9"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Configuration",
+            "description": null,
+            "arguments": {
+                "num_of_records_to_create": "10"
+            },
+            "status": null,
+            "top": "165",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
+            "group": null,
+            "uuid": "3d43ac86-0446-458a-ad9c-285a691baa64"
         }
     ],
     "routes": [
@@ -143,23 +161,33 @@
         },
         {
             "@type": "WorkflowRoute",
+            "name": "Start -> Configuration",
+            "targetStep": "\/api\/3\/workflow_steps\/3d43ac86-0446-458a-ad9c-285a691baa64",
+            "sourceStep": "\/api\/3\/workflow_steps\/b0e94112-bc17-424d-a15e-7c0f17153bc9",
+            "label": null,
+            "isExecuted": false,
+            "uuid": "9c6e1260-68ff-4dbf-a55a-d7ac1318b91a"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Configuration -> Read Report and Create DataSet",
+            "targetStep": "\/api\/3\/workflow_steps\/8e737b0a-4652-4ceb-9b59-1a4c9a885eea",
+            "sourceStep": "\/api\/3\/workflow_steps\/3d43ac86-0446-458a-ad9c-285a691baa64",
+            "label": null,
+            "isExecuted": false,
+            "uuid": "5db2238f-1bb8-4af4-8906-f17ef78d9071"
+        },
+        {
+            "@type": "WorkflowRoute",
             "name": "Create Or Update Assets Detail -> Create Demo Alert",
             "targetStep": "\/api\/3\/workflow_steps\/74fef32f-0678-4d32-a7d4-700ebedb99e3",
             "sourceStep": "\/api\/3\/workflow_steps\/3e574762-4214-4b3e-890d-5a8e6f239f07",
             "label": null,
             "isExecuted": false,
-            "uuid": "f77de6fb-bc40-4858-a2dd-6d7225eeaf38"
-        },
-        {
-            "@type": "WorkflowRoute",
-            "name": "Start -> Read Report and Create DataSet",
-            "targetStep": "\/api\/3\/workflow_steps\/8e737b0a-4652-4ceb-9b59-1a4c9a885eea",
-            "sourceStep": "\/api\/3\/workflow_steps\/b0e94112-bc17-424d-a15e-7c0f17153bc9",
-            "label": null,
-            "isExecuted": false,
-            "uuid": "6806b336-74c6-4a13-8a1c-9960ee0e0704"
+            "uuid": "4e4d6cd5-f1cd-45ed-8284-22397985d369"
         }
     ],
+    "groups": [],
     "priority": "\/api\/3\/picklists\/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
     "uuid": "ab7b60c7-b8fe-4442-83cb-145bdd9169bb",
     "owners": [],

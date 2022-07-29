@@ -1,6 +1,6 @@
 {
     "name": "cSVDataManagement",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "type": "solutionpack",
     "local": true,
     "installed": false,
@@ -10,31 +10,41 @@
             "name": "sOARFramework",
             "type": "solutionpack",
             "label": "SOAR Framework",
-            "version": "1.0.0",
+            "version": "1.1.0",
             "minVersion": null
         },
         {
             "name": "socSimulator",
             "type": "solutionpack",
             "label": "SOC Simulator",
-            "version": "1.0.1",
+            "version": "2.0.0",
             "minVersion": null
         }
     ],
     "prerequisite": null,
     "publisher": "Fortinet",
-    "description": "Demonstrate usage of CSV Data Management connector with examples like ingesting CSV records as IOCs by merge / concat / join of two CSV files. Also capabilties like reading a particular column or columns. Deduplicating data based on user input",
+    "description": "Demonstrate usage of CSV Data Management connector with examples like ingesting CSV records as IOCs by merge / concat / join of two CSV files. Also capabilties like reading a particular column or columns. Deduplicating / filtering data based on user input",
     "help": null,
     "category": [
         "Case Management",
-        "Utilities",
-        "Document Reader"
+        "Document Reader",
+        "Utilities"
     ],
-    "supportInfo": "Fortinet Customer Support",
+    "supportInfo": null,
     "iconLarge": null,
     "fsrMinCompatibility": "7.2.0",
-    "date": "2022-05-17T09:58:58+00:00",
+    "date": "2022-07-28T09:22:14+00:00",
     "contents": {
+        "modules": {
+            "attachments": {
+                "name": "Attachments",
+                "apiName": "attachments"
+            },
+            "scenario": {
+                "name": "Scenario",
+                "apiName": "scenario"
+            }
+        },
         "playbooks": [
             {
                 "name": "02 - Use Case - CSV Data Management"
@@ -45,19 +55,19 @@
             {
                 "name": "CSV Data Management",
                 "apiName": "csv-data-management",
-                "version": "1.0.0"
+                "version": "1.1.0"
             }
         ],
         "recordSets": [
             {
                 "name": "Attachments",
                 "apiName": "attachments",
-                "count": 2
+                "count": 3
             },
             {
                 "name": "Scenario",
                 "apiName": "scenario",
-                "count": 2
+                "count": 3
             }
         ]
     }
