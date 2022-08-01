@@ -53,7 +53,7 @@
         "connectors": [
             {
                 "name": "CSV Data Management",
-                "apiName": "csv-data-management_dev",
+                "apiName": "csv-data-management",
                 "version": "1.1.0"
             }
         ],
