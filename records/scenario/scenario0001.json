@@ -14,14 +14,14 @@
             ]
         },
         "configuration": null,
-        "title": "Read and merge two CSV file to create a data set",
-        "description": "This scenario demonstrates how can we create a single dataset by merging two CSV files pivoting over a common column.\n\nLets consider below use case follow\n\n* A tool which allows to export vulnerability scan report in a CSV file, which has IP address as column name\n* An asset inventory tool which allows to export asset details in CSV file which has also IP address as column name\n* We have to create single dataset by merging two CSV files pivoting over a common column which can be ingested in ForiSOAR  \n* Here we use 'Merge and Extract Data from two CSV' operation of CSV Data Management connector to read file and extract data  \n* Data is then ingested using playbook \n\nUsage\n\n* Deploy current scenario  \n* A playbook will be using CSV Data Management connector to read both CSV files and merge using common column.\n\t* The resultant dataset will be used to create asset records , which will have asset details along with vulnerability details \n\n**Note :** This simulation will create a demo alert to which we will correlate asset record. ",
+        "title": "Read and merge two CSV files to create a data set",
+        "description": "This scenario demonstrates how to create a single dataset by merging two `.csv` files based on a common column.\n\nLet us consider the following requirements:\n\n- Scan a vulnerability report in a `.csv` file that has a column containing IP addresses\n- Scan assets details listed in a `.csv` file that has a column containing IP addresses\n- Create a single dataset, which can be ingested in FortiSOAR, by merging these `.csv` files based on the common column &ndash; *IP Address*\n\nHere, we use *Merge and Extract Data from two CSV* operation of **CSV Data Management** connector to read file and extract data. Data is then ingested using the playbook *Read Reports and update assets*.\n\nThis playbook undertakes following actions:\n1. Use **CSV Data Management** connector to read both `.csv` files and merge using the common column &ndash; *IP Address*.\n    - Users can choose to remove duplicates on resultant record set based on the specified columns.  \n2. Use the resultant dataset to create asset records with the same asset name and vulnerability details.\n\n>**NOTE**: This simulation creates an example alert that correlates assets record.",
         "createdAlertsID": null,
         "uuid": "105f1e09-5393-4da8-8a32-fb9ea8d2a4e0",
         "createUser": "\/api\/3\/people\/3451141c-bac6-467c-8d72-85e0fab569ce",
         "createDate": 1652346876.761123,
-        "modifyUser": "\/api\/3\/appliances\/57545210-2adc-472b-a24f-2df6ee8dfe63",
-        "modifyDate": 1658737605.183205,
+        "modifyUser": "\/api\/3\/people\/3451141c-bac6-467c-8d72-85e0fab569ce",
+        "modifyDate": 1659338868.429448,
         "id": 1,
         "recordTags": [
             "CSV Data Management"
@@ -43,13 +43,13 @@
         },
         "configuration": null,
         "title": "IP Address Intelligence in the Network Firewall using Fortiguard Threat Intel Feed",
-        "description": "This scenario demonstrates how can we create filter out a CSV file, containing various type of IOC, using regex to extract only IP address. The resultant dataset can be directly passed to firewall block list or can be saved as CSV file.\n\nLets consider below use case follow\n\n* User manually download or has an automated way to download threat intel feed in CSV file from Fortiguard\n* This file contains all types of IOC\n* User needs to extract only IP address as separate data in CSV format , which can then uploaded to a network firewall \n\nUsage\n\n* Deploy current scenario \n* An attachment named IOC is created. This is a sample CSV file provided by Fortiguard and used as an input to playboo. \n* A playbook will be using CSV Data Management connector to read  CSV files and filter out data based on regex provided by user.\n\t* The regex filter provided in this scenario is for IP address\n\t* The resultant data set can be used as is to pass to firewall or saved as attachment in FortiSOAR for later use\n\n**Note :** This simulation do not create any dummy record. ",
+        "description": "This scenario demonstrates how to filter a CSV file containing various types of IOCs (Indicators of Compromise). It uses regex to extract only the IP address to create a resultant dataset that can be directly passed to a firewall's block list or saved as a CSV file.\n\nLet us consider the following requirements:\n\n- User downloads threat intel feed in a CSV file from Fortiguard\n    >**NOTE**: For this scenario, the solution pack installation downloads a CSV file, for demonstration purposes, and saves it in **Resources** > **Attachments** named `all.csv`\n- This file contains various types of IOCs\n- User needs to extract only the IP address as a separate dataset, in CSV format, to upload it to a network firewall\n\nHere, we use *Extract Data from Single CSV* operation of **CSV Data Management** connector to read file and extract data. The file is then processed to extract only the IP addresses in a separate CSV file using the playbook *Update threat intelligence in the Network Firewall using Fortiguard Threat Intel Feed*.\n\nThe playbook undertakes following actions:\n\n1. Create an attachment named **IOC**.\n    - This acts as a sample CSV file provided by Fortiguard and used as an input to playbook.\n2. Use CSV Data Management connector to read CSV files and filter out data based on regex provided by user.\n\t  - The regex filter provided in this scenario is for IP address\n3. The resultant data set can be used as is to pass to firewall or saved as attachment in FortiSOAR for later use.\n\n>**NOTE:** This simulation does not create any example records.",
         "createdAlertsID": null,
         "uuid": "4159bc7f-9051-4438-8d2e-bac3ab2025c8",
         "createUser": "\/api\/3\/people\/3451141c-bac6-467c-8d72-85e0fab569ce",
         "createDate": 1658742141.60986,
-        "modifyUser": "\/api\/3\/people\/3451141c-bac6-467c-8d72-85e0fab569ce",
-        "modifyDate": 1659000056.641068,
+        "modifyUser": "\/api\/3\/appliances\/57545210-2adc-472b-a24f-2df6ee8dfe63",
+        "modifyDate": 1659340111.189207,
         "id": 3,
         "recordTags": [
             "CSV Data Management"
@@ -71,13 +71,13 @@
         },
         "configuration": null,
         "title": "Ingest and create artefacts by extracting details from  CSV files",
-        "description": "This scenario demonstrates how  we can ingest rows as records from a CSV File.  \n\nLets consider below use case :\n\n* A tool which allows to export artefacts in a CSV File \n* We have to read CSV file and convert details from it into a dataset which can be ingested in ForiSOAR\n* Here we use 'Extract Data from Single CSV' operation of CSV Data Management connector to read file and extract dataset\n* Dataset is then ingested using a playbook containing  'Ingest Bulk Feed' playbook step\n\nUsage\n\n* Deploy current scenario \n* A playbook will execute , which will download CSV feed from following URLs\n    * https:\/\/malsilo.gitlab.io\/feeds\/dumps\/url_list.txt\n    * https:\/\/malsilo.gitlab.io\/feeds\/dumps\/ip_list.txt\n* Above feeds are saved as attachment in CSV format with FortiSOAR\n* We will use CSV Data Management connector to join both files and create dataset\n* This dataset will be ingested in ForiSOAR using 'Ingest Bulk Feed' feature via playbook\n\n**Note :** This simulation will create IOC records , tagged 'csv-demo'\n\n",
+        "description": "This scenario demonstrates how to ingest rows as records from a `.csv` file.\n\nLet us consider the following requirements:\n- Export artefacts in a `.csv` file\n- Read `.csv` files and convert it into a dataset that can be ingested in FortiSOAR\n\nHere we use *Extract Data from Single CSV* operation of **CSV Data Management** connector to read file and extract data. Data is then ingested using the playbook *Read artefacts and ingest from CSV*.\n\nThe playbook undertakes following actions:\n1. Download URL list from https:\/\/malsilo.gitlab.io\/feeds\/dumps\/url_list.txt. This list simulates a URL feed.\n2. Create an attachment file containing the URLs in CSV format.\n3. Download IP addresses list from https:\/\/malsilo.gitlab.io\/feeds\/dumps\/ip_list.txt. This list simulates an IP address feed.\n4. Create an attachment file containing the IP addresses in CSV format.\n5. Join the CSV files containing IP addresses and the URL list using **CSV Data Management** connector to merge both the files and create a data set.\n6. Ingest the URLs and IP addresses and create indicators in FortiSOAR using *Ingest Bulk Feed* operation.\n\n>**NOTE:** This simulation creates indicator records and tags them as *csv-demo*.",
         "createdAlertsID": null,
         "uuid": "957c18fb-b929-42ab-862e-11d9b30fbebe",
         "createUser": "\/api\/3\/people\/3451141c-bac6-467c-8d72-85e0fab569ce",
         "createDate": 1651490490.472902,
         "modifyUser": "\/api\/3\/appliances\/57545210-2adc-472b-a24f-2df6ee8dfe63",
-        "modifyDate": 1658729522.611115,
+        "modifyDate": 1659338910.939548,
         "id": 2,
         "recordTags": [
             "CSV Data Management"
