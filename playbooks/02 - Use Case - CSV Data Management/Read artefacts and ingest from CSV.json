@@ -13,58 +13,8 @@
     "synchronous": false,
     "collection": "\/api\/3\/workflow_collections\/5c265a46-01de-4ba8-9b5a-b8bae4335b35",
     "versions": [],
-    "triggerStep": "\/api\/3\/workflow_steps\/5964a6e0-6718-4913-9ee2-6afcd779dc04",
+    "triggerStep": "\/api\/3\/workflow_steps\/4e4887de-1e31-4056-ae90-76df0ac8c08c",
     "steps": [
-        {
-            "@type": "WorkflowStep",
-            "name": "Start",
-            "description": null,
-            "arguments": {
-                "route": "d4dfd012-c8ba-4172-8659-f6a3d1f277b9",
-                "resources": [
-                    "scenario"
-                ],
-                "inputVariables": [],
-                "step_variables": {
-                    "input": {
-                        "params": [],
-                        "records": "{{vars.input.records}}"
-                    }
-                },
-                "_promptexpanded": true,
-                "displayConditions": {
-                    "scenario": {
-                        "sort": [],
-                        "limit": 30,
-                        "logic": "AND",
-                        "filters": [
-                            {
-                                "type": "primitive",
-                                "field": "title",
-                                "value": "Ingest and create artifact by extracting details from a CSV file",
-                                "operator": "eq",
-                                "_operator": "eq"
-                            }
-                        ]
-                    },
-                    "attachments": {
-                        "sort": [],
-                        "limit": 30,
-                        "logic": "AND",
-                        "filters": []
-                    }
-                },
-                "executeButtonText": "OK",
-                "noRecordExecution": true,
-                "singleRecordExecution": false
-            },
-            "status": null,
-            "top": "30",
-            "left": "125",
-            "stepType": "\/api\/3\/workflow_step_types\/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
-            "group": null,
-            "uuid": "5964a6e0-6718-4913-9ee2-6afcd779dc04"
-        },
         {
             "@type": "WorkflowStep",
             "name": "Join IP and URL CSV File and Create Dataset",
@@ -322,6 +272,24 @@
             "stepType": "\/api\/3\/workflow_step_types\/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
             "group": null,
             "uuid": "01be3657-816e-4cc8-b093-06474769182c"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Start",
+            "description": null,
+            "arguments": {
+                "step_variables": {
+                    "input": {
+                        "params": []
+                    }
+                }
+            },
+            "status": null,
+            "top": "30",
+            "left": "125",
+            "stepType": "\/api\/3\/workflow_step_types\/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+            "group": null,
+            "uuid": "4e4887de-1e31-4056-ae90-76df0ac8c08c"
         }
     ],
     "routes": [
@@ -381,15 +349,6 @@
         },
         {
             "@type": "WorkflowRoute",
-            "name": "Start -> Configuration",
-            "targetStep": "\/api\/3\/workflow_steps\/01be3657-816e-4cc8-b093-06474769182c",
-            "sourceStep": "\/api\/3\/workflow_steps\/5964a6e0-6718-4913-9ee2-6afcd779dc04",
-            "label": null,
-            "isExecuted": false,
-            "uuid": "9aedda3c-9f49-4594-bd1d-81377bb2f09d"
-        },
-        {
-            "@type": "WorkflowRoute",
             "name": "Configuration -> Download Malsilo URL List",
             "targetStep": "\/api\/3\/workflow_steps\/d51b0582-3d79-445b-8a29-5b3c53db86cd",
             "sourceStep": "\/api\/3\/workflow_steps\/01be3657-816e-4cc8-b093-06474769182c",
@@ -405,6 +364,15 @@
             "label": null,
             "isExecuted": false,
             "uuid": "c5b159e0-6dfb-4f5d-9dbb-753314f575e4"
+        },
+        {
+            "@type": "WorkflowRoute",
+            "name": "Start -> Configuration",
+            "targetStep": "\/api\/3\/workflow_steps\/01be3657-816e-4cc8-b093-06474769182c",
+            "sourceStep": "\/api\/3\/workflow_steps\/4e4887de-1e31-4056-ae90-76df0ac8c08c",
+            "label": null,
+            "isExecuted": false,
+            "uuid": "d33c4f33-3a98-4d07-b2d8-f32d7f2394ea"
         }
     ],
     "groups": [],
