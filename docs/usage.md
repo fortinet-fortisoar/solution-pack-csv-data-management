@@ -3,7 +3,7 @@
 
 # Usage
 
-Refer to [Simulate Scenario documentation](https://github.com/fortinet-fortisoar/solution-pack-soc-simulator/blob/develop/docs/solution-pack-guide.md) to understand how to simulate and reset scenarios.
+Refer to [Simulate Scenario documentation](https://github.com/fortinet-fortisoar/solution-pack-soc-simulator/blob/release/1.0.2/docs/usage.md) to understand how to simulate and reset scenarios.
 
 To understand how this solution pack's automation addresses your needs, we have included a few scenarios.
 

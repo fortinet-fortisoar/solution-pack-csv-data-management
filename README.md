@@ -1,9 +1,9 @@
 # Release Information
 
-* **Version**: 1.1.0
-* **Certified**: No
-* **Publisher**: Fortinet
-* **Compatible Version**: FortiSOAR v7.2.0 and later
+- **Version**: 1.1.0
+- **Certified**: No
+- **Publisher**: Fortinet
+- **Compatible Version**: FortiSOAR v7.2.0 and later
 
 # Overview
 
