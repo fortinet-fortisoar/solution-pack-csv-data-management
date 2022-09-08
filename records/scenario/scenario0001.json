@@ -32,7 +32,7 @@
         "steps": {
             "Steps": [
                 {
-                    "name": "Read artefacts and ingest from CSV",
+                    "name": "Filter Threat Intel Feed",
                     "type": "executePlaybook",
                     "playbookIRI": "\/api\/3\/workflows\/a7f52635-4d22-4af0-8f11-148e3935741e",
                     "preCreateMessage": "Triggering playbook to create demo alert for csv data management",
