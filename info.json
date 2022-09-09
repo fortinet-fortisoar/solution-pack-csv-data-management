@@ -23,7 +23,7 @@
   "prerequisite": null,
   "publisher": "Fortinet",
   "description": "Demonstrate usage of CSV Data Management connector with examples like ingesting CSV records as IOCs by merge / concat / join of two CSV files. Also capabilties like reading a particular column or columns. Deduplicating data based on user input",
-  "help": null,
+  "help": "https://github.com/fortinet-fortisoar/solution-pack-csv-data-management/blob/release/1.1.0/README.md",
   "category": [
     "Case Management",
     "Document Reader",
